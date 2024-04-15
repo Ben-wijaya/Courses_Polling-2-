@@ -22,4 +22,8 @@ class Prodis extends Model
         'id',
         'name'
     ];
+
+    public function fakultas(){
+        return $this->belongsTo(Fakultas::class);
+    }
 }

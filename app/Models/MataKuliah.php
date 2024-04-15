@@ -21,11 +21,15 @@ class MataKuliah extends Model
     protected $fillable = [
         'kode',
         'nama',
+        'sks',
         'prodis_id'
 
     ];
 
     public function prodi(){
         return $this->belongsTo(Prodis::class, 'prodis_id');
+    }
+    public function polling(){
+        return $this->hasMany(Polling::class);
     }
 }

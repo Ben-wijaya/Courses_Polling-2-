@@ -1,9 +1,13 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\DashboardUsersController;
-use App\Http\Controllers\DashboardProdisController;
-use App\Http\Controllers\MataKuliahController;
+use App\Http\Controllers\AdminUsersController;
+use App\Http\Controllers\AdminFakultasController;
+use App\Http\Controllers\AdminProdisController;
+use App\Http\Controllers\MhsPollingController;
+use App\Http\Controllers\ProdiHasilController;
+use App\Http\Controllers\ProdiMahasiswaController;
+use App\Http\Controllers\ProdiMataKuliahController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
@@ -33,7 +37,11 @@ Route::middleware(['auth'])->group(function(){
     Route::get('/dashboard/program_studi', [DashboardController::class, 'program_studi'])->middleware('userAccess:Program Studi');
     Route::get('/dashboard/mahasiswa', [DashboardController::class, 'mahasiswa'])->middleware('userAccess:Mahasiswa');
     Route::get('/logout', [SessionController::class, 'logout']);
-    Route::resource('/dashboard/users', DashboardUsersController::class)->middleware('userAccess:Admin');
-    Route::resource('/dashboard/prodi', DashboardProdisController::class)->middleware('userAccess:Admin');
-    Route::resource('/dashboard/matkul', MataKuliahController::class)->middleware('userAccess:Program Studi');
+    Route::resource('/dashboard/users', AdminUsersController::class)->middleware('userAccess:Admin');
+    Route::resource('/dashboard/fakultas', AdminFakultasController::class)->middleware('userAccess:Admin');
+    Route::resource('/dashboard/prodi', AdminProdisController::class)->middleware('userAccess:Admin');
+    Route::resource('/dashboard/prodi_hasil', ProdiHasilController::class)->middleware('userAccess:Program Studi');
+    Route::resource('/dashboard/matkul', ProdiMataKuliahController::class)->middleware('userAccess:Program Studi');
+    Route::resource('/dashboard/prodi_mahasiswa', ProdiMahasiswaController::class)->middleware('userAccess:Program Studi');
+    Route::resource('/dashboard/mhs_polling', MhsPollingController::class)->middleware('userAccess:Mahasiswa');
 });

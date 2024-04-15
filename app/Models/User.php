@@ -18,10 +18,12 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
+        'nrp',
         'name',
         'email',
         'password',
         'role',
+        'fakultas_id',
         'prodi_id'
     ];
 
@@ -47,5 +49,9 @@ class User extends Authenticatable
 
     public function prodi(){
         return $this->belongsTo(Prodis::class);
+    }
+
+    public function fakultas(){
+        return $this->belongsTo(Fakultas::class);
     }
 }

@@ -9,10 +9,22 @@
     @method('put')
     @csrf
     <div class="mb-3">
+      <label for="fakultas_id">Fakultas</label>
+      <select name="fakultas_id" class="form-select">
+        @foreach ($fakultas as $faculty)
+          @if (old('fakultas_id', $prodi->fakultas_id) == $faculty->id)
+            <option value="{{ $faculty->id }}" selected>{{ $faculty->kode }} - {{ $faculty->nama }}</option>
+          @else
+            <option value="{{ $faculty->id }}">{{ $faculty->kode }} - {{ $faculty->nama }}</option>
+          @endif
+        @endforeach
+      </select>
+    </div>
+    <div class="mb-3">
       <label for="kode" class="form-label">Kode Program Studi</label>
-      <input type="text" class="form-control @error('id') is-invalid @enderror"
-      id="id" name="id" placeholder="kode" required value="{{ old('id', $prodi->id) }} " readonly>
-      @error('name')
+      <input type="text" class="form-control @error('kode') is-invalid @enderror"
+      id="kode" name="kode" placeholder="kode" required value="{{ old('id', $prodi->kode) }} ">
+      @error('kode')
           <div class="invalid-feedback">
             {{ $message }}
           </div>

@@ -2,7 +2,7 @@
 
 @section('container')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-  <h1 class="h2">Mata Kuliah</h1>
+  <h1 class="h2">Mata Kuliah S1 - {{ auth()->user()->prodi->name }}</h1>
 </div>
 
 @if(session()->has('success'))
@@ -16,9 +16,9 @@
     <table class="table table-striped table-sm">
       <thead>
         <tr>
-          <th scope="col">Program Studi</th>
           <th scope="col">Kode Mata Kuliah</th>
           <th scope="col">Nama Mata Kuliah</th>
+          <th scope="col">SKS</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
@@ -26,9 +26,9 @@
         @foreach ($matkuls as $matkul)
           @if ( $matkul->prodis_id == auth()->user()->prodi_id )
             <tr>
-              <td>{{ $matkul->prodi->id }} - {{ $matkul->prodi->name }}</td>
               <td>{{ $matkul->kode }}</td>
               <td>{{ $matkul->nama }}</td>
+              <td>{{ $matkul->sks }}</td>
               <td>
                 <a href="/dashboard/matkul/{{ $matkul->id }}/edit" class="badge bg-success"><span data-feather="edit"></span></a>
                 <form action="/dashboard/matkul/{{ $matkul->id }}" method="POST" class="d-inline">

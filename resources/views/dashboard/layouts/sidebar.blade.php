@@ -24,6 +24,12 @@
           </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link {{ Request::is('dashboard/fakultas*') ? 'active' : '' }}" href="/dashboard/fakultas">
+            <span data-feather="briefcase"></span>
+            Fakultas
+          </a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link {{ Request::is('dashboard/prodi*') ? 'active' : '' }}" href="/dashboard/prodi">
             <span data-feather="file"></span>
             Program Studi
@@ -35,6 +41,26 @@
           <a class="nav-link {{ Request::is('dashboard/matkul*') ? 'active' : '' }}" href="/dashboard/matkul">
             <span data-feather="book-open"></span>
             Mata Kuliah
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('dashboard/prodi_mahasiswa*') ? 'active' : '' }}" href="/dashboard/prodi_mahasiswa">
+            <span data-feather="users"></span>
+            Mahasiswa
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('dashboard/prodi_hasil*') ? 'active' : '' }}" href="/dashboard/prodi_hasil">
+            <span data-feather="file-text"></span>
+            Hasil Polling
+          </a>
+        </li>
+        @endif
+        @if(Auth::user()->role == 'Mahasiswa')
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('dashboard/mhs_polling*') ? 'active' : '' }}" href="/dashboard/mhs_polling">
+            <span data-feather="folder-plus"></span>
+            Polling Matkul
           </a>
         </li>
         @endif

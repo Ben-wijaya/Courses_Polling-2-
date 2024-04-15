@@ -13,22 +13,26 @@
 
 <div class="table-responsive">
     <a href="/dashboard/users/create" class="btn btn-primary mb-3">Tambah User</a>
-    <table class="table table-striped table-sm">
-      <thead>
+    <table class="table table-responsive table-bordered">
+      <thead class="table-dark">
         <tr>
-          <th scope="col">ID</th>
+          <th scope="col" class="text-center w-1">No</th>
+          <th scope="col">NRP</th>
           <th scope="col">Nama</th>
           <th scope="col">Role</th>
-          <th scope="col">Prodi</th>
+          <th scope="col">Fakultas</th>
+          <th scope="col">Program Studi</th>
           <th scope="col">Action</th>
         </tr>
       </thead>
       <tbody>
         @foreach ($users as $user)
         <tr>
-          <td>{{ $user->id }}</td>
+          <td class="text-center">{{ $loop->iteration }}</td>
+          <td>{{ $user->nrp }}</td>
           <td>{{ $user->name }}</td>
           <td>{{ $user->role }}</td>
+          <td>{{ $user->fakultas->nama }}</td>
           <td>{{ $user->prodi->name }}</td>
           <td>
             {{-- <a href="/dashboard/users/{{ $user->id }}" class="badge bg-info"><span data-feather="eye"></span></a> --}}

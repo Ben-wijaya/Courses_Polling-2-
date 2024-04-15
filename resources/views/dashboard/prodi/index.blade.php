@@ -13,9 +13,11 @@
 
 <div class="table-responsive">
     <a href="/dashboard/prodi/create" class="btn btn-primary mb-3">Tambah Program Studi</a>
-    <table class="table table-striped table-sm">
-      <thead>
+    <table class="table table-responsive table-bordered">
+      <thead class="table-dark">
         <tr>
+          <th scope="col" class="text-center">No</th>
+          <th scope="col">Fakultas</th>
           <th scope="col">Kode Program Studi</th>
           <th scope="col">Program Studi</th>
           <th scope="col">Action</th>
@@ -24,7 +26,9 @@
       <tbody>
         @foreach ($prodis as $prodi)
         <tr>
-          <td>{{ $prodi->id }}</td>
+          <td class="text-center">{{ $loop->iteration }}</td>
+          <td>{{ $prodi->fakultas->kode }} - {{ $prodi->fakultas->nama }}</td>
+          <td>{{ $prodi->kode }}</td>
           <td>{{ $prodi->name }}</td>
           <td>
             {{-- <a href="/dashboard/prodi/{{ $prodi->id }}" class="badge bg-info"><span data-feather="eye"></span></a> --}}

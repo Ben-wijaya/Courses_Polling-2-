@@ -38,6 +38,16 @@
           </div>
       @enderror
     </div>
+    <div class="mb-3">
+      <label for="sks" class="form-label">SKS</label>
+      <input type="number" class="form-control @error('sks') is-invalid @enderror"
+      id="sks" name="sks" placeholder="Contoh : <Fakultas>-<Nomer Mata Kuliah>" required value="{{ old('sks', $matkul->sks) }}">
+      @error('sks')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div>
+      @enderror
+    </div>
     <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 @endsection

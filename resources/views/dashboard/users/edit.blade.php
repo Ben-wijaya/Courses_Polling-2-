@@ -9,6 +9,16 @@
     @method('put')
     @csrf
     <div class="mb-3">
+      <label for="nrp" class="form-label">NRP</label>
+      <input type="text" class="form-control @error('nrp') is-invalid @enderror"
+      id="nrp" name="nrp" placeholder="Contoh: 2272037" required value="{{ old('name', $user->nrp) }}">
+      @error('nrp')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div>
+      @enderror
+    </div>
+    <div class="mb-3">
       <label for="name" class="form-label">Name</label>
       <input type="text" class="form-control @error('name') is-invalid @enderror"
       id="name" name="name" placeholder="Contoh: Budi Santoso" required value="{{ old('name', $user->name) }}">
@@ -51,11 +61,23 @@
       </select>
     </div>
     <div class="mb-3">
-      <label for="prodi_id">Prodi</label>
+      <label for="fakultas_id">Fakultas</label>
+      <select name="fakultas_id" class="form-select">
+        @foreach ($fakultas as $faculty)
+          @if (old('fakultas_id', $user->fakultas_id) == $faculty->id)
+            <option value="{{ $faculty->id }}" selected>{{ $faculty->kode }} - {{ $faculty->nama }}</option>
+          @else
+            <option value="{{ $faculty->id }}">{{ $faculty->kode }} - {{ $faculty->nama }}</option>
+          @endif
+        @endforeach
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="prodi_id">Program Studi</label>
       <select name="prodi_id" class="form-select">
         @foreach ($prodis as $prodi)
           @if (old('prodi_id', $user->prodi_id) == $prodi->id)
-            <option value="{{ $prodi->id }}" selected>{{ $prodi->name }}</option>
+            <option value="{{ $prodi->id }}" selected>{{ $prodi->kode }} - {{ $prodi->name }}</option>
           @else
             <option value="{{ $prodi->id }}">{{ $prodi->name }}</option>
           @endif
