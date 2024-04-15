@@ -1,0 +1,89 @@
+@extends('dashboard.layouts.main')
+
+@section('container')
+<div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+    <h1 class="h2">Edit User</h1>
+</div>
+
+<form method="POST" action="/dashboard/users/{{ $user->id }}">
+    @method('put')
+    @csrf
+    <div class="mb-3">
+      <label for="nrp" class="form-label">NRP</label>
+      <input type="text" class="form-control @error('nrp') is-invalid @enderror"
+      id="nrp" name="nrp" placeholder="Contoh: 2272037" required value="{{ old('name', $user->nrp) }}">
+      @error('nrp')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div>
+      @enderror
+    </div>
+    <div class="mb-3">
+      <label for="name" class="form-label">Name</label>
+      <input type="text" class="form-control @error('name') is-invalid @enderror"
+      id="name" name="name" placeholder="Contoh: Budi Santoso" required value="{{ old('name', $user->name) }}">
+      @error('name')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div>
+      @enderror
+    </div>
+    <div class="mb-3">
+      <label for="email" class="form-label">Email address</label>
+      <input type="email" class="form-control @error('email') is-invalid @enderror"
+      id="email" name="email" placeholder="Contoh: budi@test.com" required value="{{ old('email', $user->email) }}">
+      @error('email')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div>
+      @enderror
+    </div>
+    <div class="mb-3">
+      <label for="role">Role</label>
+      <select name="role" class="form-select">
+        @if (old('role', $user->role) == $user->role)
+          <option value="Admin" selected>Admin</option>
+        @else
+        <option value="Admin">Admin</option>
+        @endif
+
+        @if (old('role', $user->role) == $user->role)
+          <option value="Program Studi" selected>Program Studi</option>
+        @else
+        <option value="Admin">Admin</option>
+        @endif
+
+        @if (old('role', $user->role) == $user->role)
+          <option value="Mahasiswa" selected>Mahasiswa</option>
+        @else
+        <option value="Admin">Admin</option>
+        @endif
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="fakultas_id">Fakultas</label>
+      <select name="fakultas_id" class="form-select">
+        @foreach ($fakultas as $faculty)
+          @if (old('fakultas_id', $user->fakultas_id) == $faculty->id)
+            <option value="{{ $faculty->id }}" selected>{{ $faculty->kode }} - {{ $faculty->nama }}</option>
+          @else
+            <option value="{{ $faculty->id }}">{{ $faculty->kode }} - {{ $faculty->nama }}</option>
+          @endif
+        @endforeach
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="prodi_id">Program Studi</label>
+      <select name="prodi_id" class="form-select">
+        @foreach ($prodis as $prodi)
+          @if (old('prodi_id', $user->prodi_id) == $prodi->id)
+            <option value="{{ $prodi->id }}" selected>{{ $prodi->kode }} - {{ $prodi->name }}</option>
+          @else
+            <option value="{{ $prodi->id }}">{{ $prodi->name }}</option>
+          @endif
+        @endforeach
+      </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+@endsection
