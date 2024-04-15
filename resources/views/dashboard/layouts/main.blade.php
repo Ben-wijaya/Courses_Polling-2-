@@ -6,7 +6,15 @@
     {{-- <meta name="description" content="">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Hugo 0.84.0"> --}}
-    <title>Admin | Dashboard</title>   
+    @if(Auth::user()->role == 'Admin')
+      <title>Admin | Dashboard</title>
+    @endif 
+    @if(Auth::user()->role == 'Program Studi')
+    <title>Program Studi | Dashboard</title>
+    @endif 
+    @if(Auth::user()->role == 'Mahasiswa')
+      <title>Mahasiswa | Dashboard</title>
+    @endif 
 
     <!-- Bootstrap core CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">

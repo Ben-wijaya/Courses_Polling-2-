@@ -26,7 +26,7 @@ class DummyUserSeeder extends Seeder
                 'name' => 'Agus',
                 'email' => 'agus@test.com',
                 'role' => 'Program Studi',
-                'prodi_id' => 1,
+                'prodi_id' => 72,
                 'password' => bcrypt('Prd12345')
             ],
 
@@ -34,7 +34,37 @@ class DummyUserSeeder extends Seeder
                 'name' => 'Asep',
                 'email' => 'asep@test.com',
                 'role' => 'Mahasiswa',
-                'prodi_id' => 1,
+                'prodi_id' => 72,
+                'password' => bcrypt('Mhs12345')
+            ],
+            [
+                'name' => 'Udin',
+                'email' => 'udin@test.com',
+                'role' => 'Program Studi',
+                'prodi_id' => 30,
+                'password' => bcrypt('Prd12345')
+            ],
+
+            [
+                'name' => 'Kokom',
+                'email' => 'kokom@test.com',
+                'role' => 'Mahasiswa',
+                'prodi_id' => 30,
+                'password' => bcrypt('Mhs12345')
+            ],
+            [
+                'name' => 'Mahmud',
+                'email' => 'mahmud@test.com',
+                'role' => 'Program Studi',
+                'prodi_id' => 73,
+                'password' => bcrypt('Prd12345')
+            ],
+
+            [
+                'name' => 'Budi',
+                'email' => 'budi@test.com',
+                'role' => 'Mahasiswa',
+                'prodi_id' => 73,
                 'password' => bcrypt('Mhs12345')
             ],
         ];

@@ -38,9 +38,12 @@
     <div class="mb-3">
       <label for="prodi_id">Prodi</label>
       <select name="prodi_id" class="form-select">
-        <option value="1">Teknik Informatika</option>
-        <option value="2">Sistem Informasi</option>
-        <option value="3">Psikologi</option>
+        @foreach ($prodis as $prodi)
+          <option value="{{ $prodi->id }}">{{ $prodi->name }}</option>
+        @endforeach
+        <!-- <option value="72">Teknik Informatika</option>
+        <option value="73">Sistem Informasi</option>
+        <option value="31">Psikologi</option> -->
       </select>
     </div>
     <button type="submit" class="btn btn-primary">Submit</button>

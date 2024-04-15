@@ -24,7 +24,9 @@ class DashboardUsersController extends Controller
      */
     public function create()
     {
-        return view('dashboard.users.create');
+        return view('dashboard.users.create', [
+            'prodis' => Prodis::all()
+        ]);
     }
 
     /**
