@@ -1,6 +1,73 @@
 ## Link Database 
 Google Drive : https://drive.google.com/drive/folders/1Cw5QXmOkbAwDCSampPlT18TDVTr4SwAI?usp=sharing
 
+## Demo Admin 
+# Email : jono@test.com, Pass : Adm12345
+# Invalid Login
+![image](https://github.com/Ben-wijaya/Courses_Polling-2-/assets/113487710/a4b27992-1fdf-4c93-9110-ee81c5a3514e)
+# Login Succes 
+![image](https://github.com/Ben-wijaya/Courses_Polling-2-/assets/113487710/f363aaaa-0ad9-4364-8eff-ce67a3035d48)
+# Sidebar User
+![image](https://github.com/Ben-wijaya/Courses_Polling-2-/assets/113487710/b26ab9c4-eb59-4cf9-8c2a-4d94ab9bc298)
+# Tambah User 
+![image](https://github.com/Ben-wijaya/Courses_Polling-2-/assets/113487710/daeb62d4-90e4-4522-810e-bac9c67b7967)
+# Tambah User Success
+![image](https://github.com/Ben-wijaya/Courses_Polling-2-/assets/113487710/93d1a663-8700-4115-b61c-5a5497b47879)
+# Sidebar Fakultas 
+![image](https://github.com/Ben-wijaya/Courses_Polling-2-/assets/113487710/89f0faa1-d149-43f2-a1bc-ada670717af5)
+# Sidebar Fakultas delete dan Sidebar Prodi belum bisa masi error
+
+## Demo Program Studi Teknik Informatika 
+# Email : agus@test.com, Pass : Prd12345
+# Login Success
+![image](https://github.com/Ben-wijaya/Courses_Polling-2-/assets/113487710/ffbe2a3a-b64c-4a1a-9a99-ede4834702c0)
+# Sidebar Mata Kuliah
+![image](https://github.com/Ben-wijaya/Courses_Polling-2-/assets/113487710/05f9a773-5acb-47bd-8e81-a90fabc9a9c3)
+# Tambah Mata Kuliah
+![image](https://github.com/Ben-wijaya/Courses_Polling-2-/assets/113487710/7b1fd38e-399a-4c64-8915-2d2e25f4b09f)
+# Tambah Success
+![image](https://github.com/Ben-wijaya/Courses_Polling-2-/assets/113487710/b9f51743-7fb1-43ad-b344-4b7f4f32c99f)
+# Edit Mata Kuliah
+![image](https://github.com/Ben-wijaya/Courses_Polling-2-/assets/113487710/090d7ab8-a2d9-4929-adf8-6a182adc0df8)
+# Edit Success
+![image](https://github.com/Ben-wijaya/Courses_Polling-2-/assets/113487710/cf662aa0-862b-4cef-99f2-43d849a60fa1)
+# Delete Matkul 
+![image](https://github.com/Ben-wijaya/Courses_Polling-2-/assets/113487710/5ca2733e-24c8-45db-97e8-dff200af8d9f)
+# Delete Matkul Success
+![image](https://github.com/Ben-wijaya/Courses_Polling-2-/assets/113487710/d5e68f26-9262-4c92-a056-69ecafb353b2)
+# Edit Mahasiswa oleh Prodi belum jalan
+# Hasil Poling 
+![image](https://github.com/Ben-wijaya/Courses_Polling-2-/assets/113487710/aec894e3-b5bf-44c0-82cc-b555e751ad7d)
+
+## Demo Mahasiswa
+# Email : asep@test.com, Pass : Mhs12345
+# Login Success
+![image](https://github.com/Ben-wijaya/Courses_Polling-2-/assets/113487710/6ee47193-8ce1-464c-b4c5-d2b3e0c1e6e1)
+# Sidebar Polling Matkul
+![image](https://github.com/Ben-wijaya/Courses_Polling-2-/assets/113487710/1a93aa31-bf96-4d63-bb0a-7dd7277d3aaa)
+# Pilih Matkul 
+![image](https://github.com/Ben-wijaya/Courses_Polling-2-/assets/113487710/775bf4fe-de0f-4aca-927c-1200b21caea8)
+# Polling Success
+![image](https://github.com/Ben-wijaya/Courses_Polling-2-/assets/113487710/5d9f8bd5-6010-4569-a4e0-0729dbf3379f)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ## Notes :
 - Polling System
 - Prodi sudah bisa CRUD mata kuliah
