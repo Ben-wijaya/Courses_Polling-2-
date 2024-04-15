@@ -1,3 +1,6 @@
+## Link Database 
+Google Drive : https://drive.google.com/drive/folders/1Cw5QXmOkbAwDCSampPlT18TDVTr4SwAI?usp=sharing
+
 ## Notes :
 - Polling System
 - Prodi sudah bisa CRUD mata kuliah
