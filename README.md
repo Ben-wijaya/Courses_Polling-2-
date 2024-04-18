@@ -1,3 +1,8 @@
+## Kelompok DunDun Family
+- 2272018 | Nathanael Kanaya Chriesman    | Lexuzzz1
+- 2272022 | Benedict Wijaya               | Ben-wijaya
+- 2272037 | Rasyaad Hildebrand Gunawan    | Hild3brand
+
 ## Link Database 
 Google Drive : https://drive.google.com/drive/folders/1Cw5QXmOkbAwDCSampPlT18TDVTr4SwAI?usp=sharing
 
