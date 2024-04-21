@@ -34,7 +34,7 @@
             <form action="/dashboard/fakultas/{{ $faculty->id }}" method="POST" class="d-inline">
               @method('delete')
               @csrf
-              <button class="badge bg-danger border-0" onclick="return confirm('Apakah Anda yakin ingin menghapus user ini?')"><span data-feather="x-circle"></span></button>
+              <button class="badge bg-danger border-0" onclick="return confirm('Apakah Anda yakin ingin menghapus Fakultas ini?')"><span data-feather="x-circle"></span></button>
             </form>
           </td>
         </tr>

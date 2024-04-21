@@ -11,6 +11,12 @@
     </div>
 @endif
 
+@if(session()->has('error'))
+    <div class="alert alert-danger" role="alert">
+        {{ session('error') }}
+    </div>
+@endif
+
 <div class="table-responsive">
     <a href="/dashboard/matkul/create" class="btn btn-primary mb-3">Tambah Mata Kuliah</a>
     <table class="table table-striped table-sm">
@@ -34,7 +40,7 @@
                 <form action="/dashboard/matkul/{{ $matkul->id }}" method="POST" class="d-inline">
                   @method('delete')
                   @csrf
-                  <button class="badge bg-danger border-0" onclick="return confirm('Apakah Anda yakin ingin menghapus user ini?')"><span data-feather="x-circle"></span></button>
+                  <button class="badge bg-danger border-0" onclick="return confirm('Apakah Anda yakin ingin menghapus Mata Kuliah ini?')"><span data-feather="x-circle"></span></button>
                 </form>
               </td>
             </tr>

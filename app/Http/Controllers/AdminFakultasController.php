@@ -76,7 +76,7 @@ class AdminFakultasController extends Controller
 
         Prodis::where('id', $prodi->id)->update($validatedData);
 
-        return redirect('/dashboard/prodi')->with('success', 'Program Studi berhasil diupdate!');
+        return redirect('/dashboard/prodi')->with('success', 'Fakultas berhasil diupdate!');
     }
 
     /**
@@ -85,6 +85,6 @@ class AdminFakultasController extends Controller
     public function destroy(Prodis $prodi)
     {
         Prodis::destroy($prodi->id);
-        return redirect('/dashboard/prodi')->with('success', 'Program Studi berhasil dihapus!');
+        return redirect('/dashboard/prodi')->with('success', 'Fakultas berhasil dihapus!');
     }
 }
