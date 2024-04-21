@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\MataKuliah;
 use App\Models\Prodis;
-use App\Models\User;
+use App\Models\Polling;
 use Illuminate\Http\Request;
 
 class ProdiMataKuliahController extends Controller
@@ -80,6 +80,12 @@ class ProdiMataKuliahController extends Controller
      */
     public function destroy(MataKuliah $matkul)
     {
+        $pollingCount = Polling::where('mata_kuliah_id', $matkul->id)->count();
+
+        if ($pollingCount > 0) {
+            return redirect('/dashboard/matkul')->with('error', 'Mata Kuliah tidak dapat dihapus! Ada ' . $pollingCount . ' data polling yang terhubung.');
+        }
+
         MataKuliah::destroy($matkul->id);
         return redirect('/dashboard/matkul')->with('success', 'Mata Kuliah berhasil dihapus!');
     }

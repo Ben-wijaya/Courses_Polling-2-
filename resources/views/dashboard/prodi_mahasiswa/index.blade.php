@@ -31,13 +31,7 @@
             <td>{{ $user->role }}</td>
             <td>{{ $user->prodi->name }}</td>
             <td>
-                {{-- <a href="/dashboard/users/{{ $user->id }}" class="badge bg-info"><span data-feather="eye"></span></a> --}}
-                <a href="/dashboard/users/{{ $user->id }}/edit" class="badge bg-success"><span data-feather="edit"></span></a>
-                <form action="/dashboard/users/{{ $user->id }}" method="POST" class="d-inline">
-                @method('delete')
-                @csrf
-                <button class="badge bg-danger border-0" onclick="return confirm('Apakah Anda yakin ingin menghapus user ini?')"><span data-feather="x-circle"></span></button>
-                </form>
+                <a href="/dashboard/prodi_mahasiswa/{{ $user->id }}/edit" class="badge bg-success"><span data-feather="edit"></span></a>
             </td>
             </tr>
             @endif

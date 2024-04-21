@@ -6,6 +6,7 @@ use App\Models\Fakultas;
 use App\Models\Prodis;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AdminUsersController extends Controller
 {
@@ -110,6 +111,10 @@ class AdminUsersController extends Controller
      */
     public function destroy(User $user)
     {
+        if (strtolower(Auth::user()->email) == strtolower($user->email)) {
+            return redirect('/dashboard/users')->with('error', 'Anda tidak dapat menghapus akun Anda sendiri. Hubungi administrator untuk meminta bantuan.');
+        }
+
         User::destroy($user->id);
         return redirect('/dashboard/users')->with('success', 'User berhasil dihapus!');
     }

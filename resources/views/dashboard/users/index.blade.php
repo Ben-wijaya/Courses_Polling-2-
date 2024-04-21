@@ -11,6 +11,12 @@
     </div>
 @endif
 
+@if(session()->has('error'))
+    <div class="alert alert-danger" role="alert">
+        {{ session('error') }}
+    </div>
+@endif
+
 <div class="table-responsive">
     <a href="/dashboard/users/create" class="btn btn-primary mb-3">Tambah User</a>
     <table class="table table-responsive table-bordered">
