@@ -29,4 +29,13 @@ class ProdiHasilController extends Controller
             'matkuls' => MataKuliah::all(),
         ]); 
     }
+    public function detail($matkul) {
+        return view('dashboard.prodi_hasil.detail', [
+            'users' => User::all(),
+            'prodis' => Prodis::all(),
+            'polls' => Polling::all(),
+            'matkul' => $matkul,
+            'matkuls' => MataKuliah::all(),
+        ]); 
+    }
 }

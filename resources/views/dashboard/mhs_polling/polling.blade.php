@@ -8,7 +8,15 @@
 <form method="POST" action="/dashboard/mhs_polling" id="matkul-form">
     @csrf
     <div class="mb-3">
-        <label for="id" class="form-label">Kode Program Studi</label><br>
+      <label for="id" class="form-label">Polling</label><br>
+      <input type="text" name="polling_nama" id="polling_nama" value="{{ $poll->nama_polling }}" placeholder="{{ $poll->nama_polling }}" readonly class="form-control @error('poll') is-invalid @enderror">
+    </div>
+    <div class="mb-3">
+      <label for="id" class="form-label">Kode Polling</label><br>
+      <input type="text" name="polling_id" id="polling_id" value="{{ $poll->id }}" placeholder="{{ $poll->nama_polling }}" readonly class="form-control @error('poll') is-invalid @enderror">
+    </div>
+    <div class="mb-3">
+      <label for="id" class="form-label">Kode Program Studi</label><br>
         @foreach($matkuls as $mk)
           @if ($mk->prodi->id == auth()->user()->prodi->id)
             <input type="checkbox" name="mata_kuliah[]" value="{{ $mk->id }}" data-sks="{{ $mk->sks }}"> {{ $mk->kode }} - {{ $mk->nama }} ( {{ $mk->sks }} SKS )<br>
