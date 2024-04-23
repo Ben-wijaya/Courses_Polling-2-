@@ -2,7 +2,7 @@
 
 @section('container')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Edit User</h1>
+    <h1 class="h2">Edit Program Studi</h1>
 </div>
 
 <form method="POST" action="/dashboard/prodi/{{ $prodi->id }}">
@@ -10,7 +10,7 @@
     @csrf
     <div class="mb-3">
       <label for="fakultas_id">Fakultas</label>
-      <select name="fakultas_id" class="form-select">
+      <select name="fakultas_id" class="form-select" disabled>
         @foreach ($fakultas as $faculty)
           @if (old('fakultas_id', $prodi->fakultas_id) == $faculty->id)
             <option value="{{ $faculty->id }}" selected>{{ $faculty->kode }} - {{ $faculty->nama }}</option>

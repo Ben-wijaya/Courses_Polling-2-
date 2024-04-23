@@ -34,7 +34,8 @@ class AdminProdisController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'id' => 'required',
+            'fakultas_id' => 'required',
+            'kode' => 'required',
             'name' => 'required'
         ]);
 
@@ -68,7 +69,6 @@ class AdminProdisController extends Controller
     public function update(Request $request, Prodis $prodi)
     {
         $rules = [
-            'fakultas_id'=> 'required',
             'kode' => 'required',
             'name' => 'required'
         ];

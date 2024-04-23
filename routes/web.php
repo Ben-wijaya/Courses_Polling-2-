@@ -6,7 +6,6 @@ use App\Http\Controllers\AdminFakultasController;
 use App\Http\Controllers\AdminProdisController;
 use App\Http\Controllers\MhsPollingController;
 use App\Http\Controllers\ProdiHasilController;
-use App\Http\Controllers\ProdiMahasiswaController;
 use App\Http\Controllers\ProdiMataKuliahController;
 use App\Http\Controllers\ProdiPollingController;
 use App\Http\Controllers\SessionController;
