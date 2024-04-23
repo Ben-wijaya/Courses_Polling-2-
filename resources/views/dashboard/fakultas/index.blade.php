@@ -12,7 +12,7 @@
 @endif
 
 <div class="table-responsive">
-    <a href="/dashboard/prodi/create" class="btn btn-primary mb-3">Tambah Fakultas</a>
+    <a href="/dashboard/fakultas/create" class="btn btn-primary mb-3">Tambah Fakultas</a>
     <table class="table table-responsive table-bordered">
       <thead class="table-dark">
         <tr>

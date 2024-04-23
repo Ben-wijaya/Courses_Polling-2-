@@ -6,7 +6,6 @@ use App\Http\Controllers\AdminFakultasController;
 use App\Http\Controllers\AdminProdisController;
 use App\Http\Controllers\MhsPollingController;
 use App\Http\Controllers\ProdiHasilController;
-use App\Http\Controllers\ProdiMahasiswaController;
 use App\Http\Controllers\ProdiMataKuliahController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
@@ -42,6 +41,5 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('/dashboard/prodi', AdminProdisController::class)->middleware('userAccess:Admin');
     Route::resource('/dashboard/prodi_hasil', ProdiHasilController::class)->middleware('userAccess:Program Studi');
     Route::resource('/dashboard/matkul', ProdiMataKuliahController::class)->middleware('userAccess:Program Studi');
-    Route::resource('/dashboard/prodi_mahasiswa', ProdiMahasiswaController::class)->middleware('userAccess:Program Studi');
     Route::resource('/dashboard/mhs_polling', MhsPollingController::class)->middleware('userAccess:Mahasiswa');
 });
