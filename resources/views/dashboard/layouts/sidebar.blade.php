@@ -44,11 +44,23 @@
           </a>
         </li>
         <li class="nav-item">
+          <a class="nav-link {{ Request::is('dashboard/prodi_mahasiswa*') ? 'active' : '' }}" href="/dashboard/prodi_mahasiswa">
+            <span data-feather="users"></span>
+            Mahasiswa
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link {{ Request::is('dashboard/prodi_polling*') ? 'active' : '' }}" href="/dashboard/prodi_polling">
+            <span data-feather="file-text"></span>
+            Polling
+          </a>
+        </li>
+        <!-- <li class="nav-item">
           <a class="nav-link {{ Request::is('dashboard/prodi_hasil*') ? 'active' : '' }}" href="/dashboard/prodi_hasil">
             <span data-feather="file-text"></span>
             Hasil Polling
           </a>
-        </li>
+        </li> -->
         @endif
         @if(Auth::user()->role == 'Mahasiswa')
         <li class="nav-item">

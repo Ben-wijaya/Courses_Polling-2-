@@ -5,13 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Polling extends Model
+class PollingDetail extends Model
 {
     use HasFactory;
 
-    protected $table = 'polling';
-
-    protected $primaryKey = 'id';
+    protected $table = 'polling_detail';
 
     /**
      * The attributes that are mass assignable.
@@ -19,15 +17,17 @@ class Polling extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'prodis_id',
-        'nama_polling',
-        'start_date',
-        'end_date',
-        'status_polling',
+        'polling_id',
+        'users_id',
+        'mata_kuliah_id',
     ];
 
     public function fakultas(){
         return $this->belongsTo(Fakultas::class);
+    }
+
+    public function polling(){
+        return $this->belongsTo(Polling::class, 'polling_id');
     }
 
     public function prodi(){
@@ -40,10 +40,5 @@ class Polling extends Model
     
     public function matkul(){
         return $this->belongsTo(MataKuliah::class, 'mata_kuliah_id');
-    }
-    
-    public function pollingdet()
-    {
-        return $this->hasMany(PollingDetail::class, 'mata_kuliah_id');  // Ensure the correct foreign key is used
     }
 }

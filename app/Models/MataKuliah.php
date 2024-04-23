@@ -30,6 +30,6 @@ class MataKuliah extends Model
         return $this->belongsTo(Prodis::class, 'prodis_id');
     }
     public function polling(){
-        return $this->hasMany(Polling::class);
+        return $this->hasMany(PollingDetail::class);
     }
 }

@@ -7,6 +7,7 @@ use App\Http\Controllers\AdminProdisController;
 use App\Http\Controllers\MhsPollingController;
 use App\Http\Controllers\ProdiHasilController;
 use App\Http\Controllers\ProdiMataKuliahController;
+use App\Http\Controllers\ProdiPollingController;
 use App\Http\Controllers\SessionController;
 use Illuminate\Support\Facades\Route;
 
@@ -41,5 +42,10 @@ Route::middleware(['auth'])->group(function(){
     Route::resource('/dashboard/prodi', AdminProdisController::class)->middleware('userAccess:Admin');
     Route::resource('/dashboard/prodi_hasil', ProdiHasilController::class)->middleware('userAccess:Program Studi');
     Route::resource('/dashboard/matkul', ProdiMataKuliahController::class)->middleware('userAccess:Program Studi');
+    Route::resource('/dashboard/prodi_mahasiswa', ProdiMahasiswaController::class)->middleware('userAccess:Program Studi');
+    Route::resource('/dashboard/prodi_polling', ProdiPollingController::class)->middleware('userAccess:Program Studi');
     Route::resource('/dashboard/mhs_polling', MhsPollingController::class)->middleware('userAccess:Mahasiswa');
+    Route::get('/dashboard/mhs_polling/{poll}/create', [MhsPollingController::class, 'create'])->name('poll.create');
+    Route::get('/dashboard/prodi_polling/{id}/show', [ProdiPollingController::class, 'show'])->name('polling.show');
+    Route::get('/dashboard/prodi_polling/{polling_id}/{id}/detail', [ProdiPollingController::class, 'detail'])->name('polling.detail');
 });
