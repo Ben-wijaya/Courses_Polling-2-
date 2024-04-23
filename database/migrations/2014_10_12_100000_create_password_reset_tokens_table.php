@@ -12,9 +12,10 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('password_reset_tokens', function (Blueprint $table) {
-            $table->string('email')->primary();
-            $table->string('token');
-            $table->timestamp('created_at')->nullable();
+            $table->id(); // Kolom id dengan tipe data BIGINT yang auto-increment
+            $table->string('email', 255); // Kolom email dengan tipe data VARCHAR dan panjang maksimum 255 karakter
+            $table->string('token', 255); // Kolom token dengan tipe data VARCHAR dan panjang maksimum 255 karakter
+            $table->timestamps(); // Kolom updated_at
         });
     }
 
