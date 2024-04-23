@@ -12,8 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('prodis', function (Blueprint $table) {
-            $table->id();
-            $table->string('name');
+            $table->id(); // Changed to bigIncrements for BIGINT auto-increment
+            $table->unsignedBigInteger('fakultas_id'); // Changed to unsignedBigInteger for BIGINT
+            $table->foreign('fakultas_id')->references('id')->on('fakultas');
+            $table->integer('kode'); // Changed to integer for INT
+            $table->string('name', 255);
             $table->timestamps();
         });
     }

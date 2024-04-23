@@ -12,13 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('failed_jobs', function (Blueprint $table) {
-            $table->id();
-            $table->string('uuid')->unique();
-            $table->text('connection');
-            $table->text('queue');
-            $table->longText('payload');
-            $table->longText('exception');
-            $table->timestamp('failed_at')->useCurrent();
+            $table->id(); // Kolom id dengan tipe data BIGINT yang auto-increment
+            $table->string('uuid', 255); // Kolom uuid dengan tipe data VARCHAR dan panjang maksimum 255 karakter
+            $table->text('connection'); // Kolom connection dengan tipe data TEXT
+            $table->text('queue'); // Kolom queue dengan tipe data TEXT
+            $table->longText('payload'); // Kolom payload dengan tipe data LONGTEXT
+            $table->longText('exception'); // Kolom exception dengan tipe data LONGTEXT
+            $table->timestamp('failed_at'); // Kolom failed_at dengan tipe data TIMESTAMP
+            $table->timestamps(); // Kolom created_at dan updated_at
         });
     }
 
