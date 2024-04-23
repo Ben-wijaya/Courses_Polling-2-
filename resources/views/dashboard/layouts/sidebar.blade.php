@@ -44,12 +44,6 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{ Request::is('dashboard/prodi_mahasiswa*') ? 'active' : '' }}" href="/dashboard/prodi_mahasiswa">
-            <span data-feather="users"></span>
-            Mahasiswa
-          </a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link {{ Request::is('dashboard/prodi_hasil*') ? 'active' : '' }}" href="/dashboard/prodi_hasil">
             <span data-feather="file-text"></span>
             Hasil Polling

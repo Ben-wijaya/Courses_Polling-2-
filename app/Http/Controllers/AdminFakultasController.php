@@ -3,8 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Fakultas;
-use App\Models\Prodis;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class AdminFakultasController extends Controller
@@ -24,7 +22,9 @@ class AdminFakultasController extends Controller
      */
     public function create()
     {
-        return view('dashboard.fakultas.create');
+        return view('dashboard.fakultas.create', [
+            'fakultas' => Fakultas::all(),
+        ]);
     }
 
     /**
@@ -33,13 +33,13 @@ class AdminFakultasController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'id' => 'required',
-            'name' => 'required'
+            'kode' => 'required',
+            'nama' => 'required'
         ]);
 
-        Prodis::create($validatedData);
+        Fakultas::create($validatedData);
 
-        return redirect('/dashboard/prodi')->with('success', 'Program Studi baru berhasil ditambahkan!');
+        return redirect('/dashboard/fakultas')->with('success', 'Fakultas baru berhasil ditambahkan!');
     }
 
     /**
@@ -53,38 +53,37 @@ class AdminFakultasController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Prodis $prodi)
+    public function edit(Fakultas $fakultas)
     {
-        return view('dashboard.prodi.edit', [
-            'prodi' => $prodi,
-            'fakultas' => Fakultas::all()
+        return view('dashboard.fakultas.edit', [
+            'fakultas' => $fakultas
         ]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Prodis $prodi)
+    public function update(Request $request, Fakultas $fakultas)
     {
         $rules = [
-            'fakultas_id'=> 'required',
             'kode' => 'required',
-            'name' => 'required'
+            'nama' => 'required'
         ];
         
         $validatedData = $request->validate($rules);
 
-        Prodis::where('id', $prodi->id)->update($validatedData);
+        Fakultas::where('id', $fakultas->id)->update($validatedData);
 
-        return redirect('/dashboard/prodi')->with('success', 'Fakultas berhasil diupdate!');
+        return redirect('/dashboard/fakultas')->with('success', 'Fakultas berhasil diupdate!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Prodis $prodi)
+    public function destroy(Fakultas $fakultas)
     {
-        Prodis::destroy($prodi->id);
-        return redirect('/dashboard/prodi')->with('success', 'Fakultas berhasil dihapus!');
+        dd($fakultas->id);
+        Fakultas::destroy($fakultas->id);
+        return redirect('/dashboard/fakultas')->with('success', 'Fakultas berhasil dihapus!');
     }
 }

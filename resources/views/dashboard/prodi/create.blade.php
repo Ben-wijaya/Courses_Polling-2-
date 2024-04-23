@@ -8,10 +8,20 @@
 <form method="POST" action="/dashboard/prodi">
     @csrf
     <div class="mb-3">
-      <label for="id" class="form-label">Kode Program Studi</label>
+      <label for="fakultas_id" class="form-label">Kode Fakultas</label>
+      <input type="text" class="form-control @error('prodis_id') is-invalid @enderror"
+      id="fakultas_id" name="fakultas_id" placeholder="{{auth()->user()->fakultas_id }} - {{ auth()->user()->fakultas->name }}" required value="{{auth()->user()->fakultas->kode }}" readonly>
+      @error('fakultas_id')
+          <div class="invalid-feedback">
+            {{ $message }}
+          </div>
+      @enderror
+    </div>
+    <div class="mb-3">
+      <label for="kode" class="form-label">Kode Program Studi</label>
       <input type="text" class="form-control @error('id') is-invalid @enderror"
-      id="id" name="id" placeholder="1 - 100" required>
-      @error('id')
+      id="kode" name="kode" placeholder="1 - 100" required>
+      @error('kode')
           <div class="invalid-feedback">
             {{ $message }}
           </div>

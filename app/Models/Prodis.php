@@ -19,7 +19,8 @@ class Prodis extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'id',
+        'fakultas_id',
+        'kode',
         'name'
     ];
 
